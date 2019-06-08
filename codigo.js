@@ -1,13 +1,14 @@
 
 class Overlay{
-    constructor(){
+    constructor(html_element,string_over= "fui fazer café"){
         this.cores = ['#FF5068',
             '#E88546',
             '#FFD659',
             '#4DFF69']
         this.var_globao_i =0
         this.var_globao_cor_tamanho = this.cores.length
-        this.var_globao_string_overlay = 'fui2 fazer café'
+        this.var_globao_string_overlay = string_over
+        this.html_element = html_element
 
     }
     
@@ -25,14 +26,14 @@ class Overlay{
         //baseado no código de gomakething
         // https://gomakethings.com/two-ways-to-set-an-elements-css-with-vanilla-javascript/
         
-       let  a = document.getElementById('cores')
+       
     
-       a.innerHTML= `<h1 style="font-family:'Courier New', Courier, monospace">${string_overlay} </h1>"`
+       this.html_element.innerHTML= `<h1 style="font-family:'Courier New', Courier, monospace">${string_overlay} </h1>"`
     
     
-        a.style.backgroundColor = nome;
+       this.html_element.style.backgroundColor = nome;
         "#e5e5e5"
-        a.style.height = '500px';
+        this.html_element.style.height = '500px';
         "150px"
     
     }
@@ -42,10 +43,16 @@ class Overlay{
 }
 
 
-over1 = new Overlay()
+over1 = new Overlay(document.getElementById('cores'))
 let func_nome = (el) => {over1.logica_software()}
 
 setInterval(func_nome , 1000 );
+
+
+over2 = new Overlay(document.getElementById('cores2'),"ja tenho café")
+let func_nome2 = (el) => {over2.logica_software()}
+
+setInterval(func_nome2 , 1000 );
 
 
 
