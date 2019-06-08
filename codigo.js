@@ -38,7 +38,7 @@ function mostra_coreS_interface(nome){
     "purple"
     a.style.backgroundColor = nome;
     "#e5e5e5"
-    a.style.height = '150px';
+    a.style.height = '500px';
     "150px"
 
 }
